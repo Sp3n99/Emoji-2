@@ -1,4 +1,13 @@
 .topbar{
     width: 100vw;
     height: 15vh;
+    background-color: lightgray;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    h1{
+        font-size: 5rem;
+    }
 }
