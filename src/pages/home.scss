@@ -1,4 +1,86 @@
 .home{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
 
+    .wrapper{
 
+        width: 70vw;
+        height: 70vh;
+        margin: auto auto;
+        display: flex;
+
+        .image-container{
+            height: 100%;
+            flex: 1;
+            background-color: rgba(240, 128, 128, 0.219);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            img{
+                height: 70%;
+                width: 70%;
+                margin-top: 10%;
+            }
+
+            form{
+                margin-top: 5%;
+                width: 50%;
+                height: 5%;
+                display: flex;
+                justify-content: center;
+
+                input{
+                    width: 100%;
+                    height: 100%;
+                    text-align: center;
+                    border: none;
+
+                    &:hover{
+                        background-color: rgba(128, 128, 128, 0.062);
+                    }
+                }
+            }
+        }
+
+        .options-container{
+            height: 100%;
+            flex: 1;
+            background-color: rgba(182, 183, 255, 0.575);
+
+            .options-wrapper{
+                height: 100%;
+                width: 100%;
+                padding-top: 10%;
+                display: flex;
+                flex-direction: column;
+
+                .option{
+                    background-color: gray;
+                    width: 100%;
+                    height: 20%;
+                    display: flex;
+                    flex-direction: column;
+                    
+                    h4{
+                        margin-top: 0;
+                        margin-bottom: 0;
+                        height: 25%;
+                        font-size: 1.5rem;
+                        padding-left: 5%;
+                    }
+
+                    .image-selector{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: 75%;
+                        img{
+                            height: 75%;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
