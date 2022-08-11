@@ -15,10 +15,11 @@ export default function Home() {
     mergeImages([require("../images/base.png")])
       .then((src) => setSrc(src))
       .catch((err) => console.log(err));
+
   }, []);
 
-  function handleClick(selection) {
-    mergeImages([require("../images/base.png"), selection])
+  function merge(selection) {
+    mergeImages([require("../images/base.png"), require("" + selection)])
       .then((src) => setSrc(src))
       .catch((err) => console.log(err));
   };
@@ -26,15 +27,15 @@ export default function Home() {
   const handleHairSelect = (direction) => {
     switch(direction){
         case "decrement":
-            if(selectedEye == 1){
-                setSelectedHair(2);
+            if(selectedHair == 1){
+                setSelectedHair(3);
             }else{
                 setSelectedHair(selectedHair - 1);
             }
         break;
 
         case "increment":
-            if(selectedHair == 2){
+            if(selectedHair == 3){
                 setSelectedHair(1);
             }else{
                 setSelectedHair(selectedHair + 1);
@@ -47,14 +48,15 @@ export default function Home() {
     switch(direction){
         case "decrement":
             if(selectedEye == 1){
-                setSelectedEye(2);
+                setSelectedEye(3);
             }else{
                 setSelectedEye(selectedEye - 1);
+                merge(`../images/eyes/eyes${selectedEye}.png`);
             }
         break;
 
         case "increment":
-            if(selectedEye == 2){
+            if(selectedEye == 3){
                 setSelectedEye(1);
             }else{
                 setSelectedEye(selectedEye + 1);
@@ -87,14 +89,14 @@ export default function Home() {
     switch(direction){
         case "decrement":
             if(selectedMouth == 1){
-                setSelectedMouth(2);
+                setSelectedMouth(3);
             }else{
                 setSelectedMouth(selectedMouth - 1);
             }
         break;
 
         case "increment":
-            if(selectedMouth == 2){
+            if(selectedMouth == 3){
                 setSelectedMouth(1);
             }else{
                 setSelectedMouth(selectedMouth + 1);
@@ -111,6 +113,10 @@ export default function Home() {
         <div className = "wrapper">
             <div className="image-container">
                 <img src={src} alt="emoji preview" />
+                <img src={require(`../images/hair/hair${selectedHair}.png`)} alt="hair preview" />
+                <img src={require(`../images/eyes/eyes${selectedEye}.png`)} alt="eyes preview" />
+                <img src={require(`../images/nose/nose${selectedNose}.png`)} alt="nose preview" />
+                <img src={require(`../images/mouth/mouth${selectedMouth}.png`)} alt="mouth preview" />
                 <form>
                     <input type="text" placeholder="Name"/>
                 </form>
