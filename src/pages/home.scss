@@ -9,22 +9,22 @@
         height: 70vh;
         margin: auto auto;
         display: flex;
+        box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.3);
+        -webkit-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.3);
+        -moz-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.3);
 
         .image-container{
             height: 100%;
             flex: 5;
-            background-color: rgba(240, 128, 128, 0.219);
+            background-color: #0000000a;
             display: flex;
             flex-direction: column;
             align-items: center;
             img{
-                height: 70%;
-                width: 70%;
-                margin-top: 10%;
+                height: 90%;
             }
 
             form{
-                margin-top: 5%;
                 width: 50%;
                 height: 5%;
                 display: flex;
@@ -45,62 +45,65 @@
 
         .options-container{
             height: 100%;
-            flex: 3;
-            background-color: rgba(182, 183, 255, 0.575);
+            flex: 2;
+            background-color: #00000015;
 
             .options-wrapper{
                 height: 100%;
                 width: 100%;
                 display: flex;
+                flex-direction: column;
 
-
-                .titles{
-                    flex: 1;
-                    margin-top: 10%;
-                    background-color: gray;
-                    display: flex;
-                    flex-direction: column;
-
-                    span{
-                        flex: 1;
-                        font-size: 24px;
-                        text-align: center;
-                    }
-
-                }
 
                 .emojis{
                     flex: 3;
-                    margin-top: 10%;
-                    background-color: lightgray;
+                    margin-top: 5%;
                     display: flex;
                     flex-direction: column;
+                    width: 100%;
 
-                    .feature-wrapper{
-                        border: 1px solid black;
-                        flex: 1;
+                    .emoji{
                         display: flex;
-                        position: relative;
-                        justify-content: center;
-                        align-items: center;
-                        
-                        .left-button{
-                            height: 50%;
-                            margin-right: 30%;
-                            width: 20%;
-                        }
+                        flex-direction: column;
+                        flex: 1;
 
-                        .right-button{
-                            height: 50%;
-                            margin-left: 20%;
-                            width: 20%;
+                        span{
+                            font-size: 24px;
+                            text-align: center;
                         }
-                        img{
-                            width: 35%;
-                            position: absolute;
-                            .base{
-                                z-index: 999;
+                    
+                        .feature-wrapper{
+                            flex: 1;
+                            display: flex;
+                            position: relative;
+                            justify-content: center;
+                            align-items: center;
+                            
+                            button{
+                                width: 20%;
+                                height: 50%;
+                                font-size: 30px;
+                                border: none;
+
+                                &:hover{
+                                    background-color: #00000013;
+                                }
                             }
+                            .left-button{
+                                margin-right: 30%;
+                            }
+
+                            .right-button{
+                                margin-left: 20%;
+                            }
+                            img{
+                                height: 100%;
+                                position: absolute;
+                                .base{
+                                    z-index: 999;
+                                }
+                            }
+
                         }
 
                     }

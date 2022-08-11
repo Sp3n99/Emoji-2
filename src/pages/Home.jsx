@@ -118,36 +118,42 @@ export default function Home() {
             </div>
             <div className="options-container">
                 <div className="options-wrapper">
-                    <div className="titles">
-                        <span>Hair</span>
-                        <span>Eyes</span>
-                        <span>Nose</span>
-                        <span>Mouth</span>
-                    </div>
                     <div className="emojis">
-                        <div className="feature-wrapper">
-                            <button className="left-button" onClick={() => handleHairSelect("decrement")} />
-                            <img className="base" src={base} />
-                            <img src={require(`../images/hair/hair${selectedHair}.png`)} />
-                            <button className="right-button" onClick={() => handleHairSelect("increment")} />
+                        <div className="emoji">
+                            <span>Hair</span>
+                            <div className="feature-wrapper">
+                                <button className="left-button" onClick={() => handleHairSelect("decrement")}>-</button>
+                                <img className="base" src={base} />
+                                <img src={require(`../images/hair/hair${selectedHair}.png`)} />
+                                <button className="right-button" onClick={() => handleHairSelect("increment")}>+</button>
+                            </div>
                         </div>
-                        <div className="feature-wrapper">
-                            <button className="left-button" onClick={() => handleEyeSelect("decrement")} />
-                            <img className="base" src={base} />
-                            <img src={require(`../images/eyes/eyes${selectedEye}.png`)} />
-                            <button className="right-button" onClick={() => handleEyeSelect("increment")} />
+                        <div className="emoji">
+                            <span>Eyes</span>
+                            <div className="feature-wrapper">
+                                <button className="left-button" onClick={() => handleEyeSelect("decrement")}>-</button>
+                                <img className="base" src={base} />
+                                <img src={require(`../images/eyes/eyes${selectedEye}.png`)} />
+                                <button className="right-button" onClick={() => handleEyeSelect("increment")}>+</button>
+                            </div>
                         </div>
-                        <div className="feature-wrapper">
-                            <button className="left-button" onClick={() => handleNoseSelect("decrement")}/>
-                            <img className="base" src={base} />
-                            <img src={require(`../images/nose/nose${selectedNose}.png`)} />
-                            <button className="right-button" onClick={() => handleNoseSelect("increment")}/>
+                        <div className="emoji">
+                            <span>Nose</span>
+                            <div className="feature-wrapper">
+                                <button className="left-button" onClick={() => handleNoseSelect("decrement")}>-</button>
+                                <img className="base" src={base} />
+                                <img src={require(`../images/nose/nose${selectedNose}.png`)} />
+                                <button className="right-button" onClick={() => handleNoseSelect("increment")}>+</button>
+                            </div>
                         </div>
-                        <div className="feature-wrapper">
-                            <button className="left-button" onClick={() => handleMouthSelect("decrement")}/>
-                            <img className="base" src={base} />
-                            <img src={require(`../images/mouth/mouth${selectedMouth}.png`)} />
-                            <button className="right-button" onClick={() => handleMouthSelect("increment")}/>
+                        <div className="emoji">
+                            <span>Mouth</span>
+                            <div className="feature-wrapper">
+                                <button className="left-button" onClick={() => handleMouthSelect("decrement")}>-</button>
+                                <img className="base" src={base} />
+                                <img src={require(`../images/mouth/mouth${selectedMouth}.png`)} />
+                                <button className="right-button" onClick={() => handleMouthSelect("increment")}>+</button>
+                            </div>
                         </div>
                     </div>
                 </div>
