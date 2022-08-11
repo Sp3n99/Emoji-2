@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import "./home.scss"
 import Topbar from "../components/Topbar"
 import mergeImages from 'merge-images-v2'
-import base from "../images/base.png"
 
 export default function Home() {
   const [src, setSrc] = useState(null);
@@ -13,13 +12,13 @@ export default function Home() {
 
   useEffect(() => {
 
-    mergeImages([base])
+    mergeImages([require("../images/base.png")])
       .then((src) => setSrc(src))
       .catch((err) => console.log(err));
   }, []);
 
   function handleClick(selection) {
-    mergeImages([base, selection])
+    mergeImages([require("../images/base.png"), selection])
       .then((src) => setSrc(src))
       .catch((err) => console.log(err));
   };
@@ -123,7 +122,7 @@ export default function Home() {
                             <span>Hair</span>
                             <div className="feature-wrapper">
                                 <button className="left-button" onClick={() => handleHairSelect("decrement")}>-</button>
-                                <img className="base" src={base} />
+                                <img className="base" src={require("../images/base.png")} />
                                 <img src={require(`../images/hair/hair${selectedHair}.png`)} />
                                 <button className="right-button" onClick={() => handleHairSelect("increment")}>+</button>
                             </div>
@@ -132,7 +131,7 @@ export default function Home() {
                             <span>Eyes</span>
                             <div className="feature-wrapper">
                                 <button className="left-button" onClick={() => handleEyeSelect("decrement")}>-</button>
-                                <img className="base" src={base} />
+                                <img className="base" src={require("../images/base.png")} />
                                 <img src={require(`../images/eyes/eyes${selectedEye}.png`)} />
                                 <button className="right-button" onClick={() => handleEyeSelect("increment")}>+</button>
                             </div>
@@ -141,7 +140,7 @@ export default function Home() {
                             <span>Nose</span>
                             <div className="feature-wrapper">
                                 <button className="left-button" onClick={() => handleNoseSelect("decrement")}>-</button>
-                                <img className="base" src={base} />
+                                <img className="base" src={require("../images/base.png")} />
                                 <img src={require(`../images/nose/nose${selectedNose}.png`)} />
                                 <button className="right-button" onClick={() => handleNoseSelect("increment")}>+</button>
                             </div>
@@ -150,7 +149,7 @@ export default function Home() {
                             <span>Mouth</span>
                             <div className="feature-wrapper">
                                 <button className="left-button" onClick={() => handleMouthSelect("decrement")}>-</button>
-                                <img className="base" src={base} />
+                                <img className="base" src={require("../images/base.png")} />
                                 <img src={require(`../images/mouth/mouth${selectedMouth}.png`)} />
                                 <button className="right-button" onClick={() => handleMouthSelect("increment")}>+</button>
                             </div>
