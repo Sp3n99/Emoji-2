@@ -23,13 +23,13 @@ export default function Home() {
         case "decrement":
             if(selectedHair == 1){
                 setSelectedHair(3);
-                var test = mergeImages([base, require(`../images/hair/hair${selectedHair}.png`), require('../images/eyes/eyes1.png')])
+                mergeImages([base, require(`../images/hair/hair${selectedHair}.png`), require(`../images/eyes/eyes${selectedEye}.png`), require(`../images/nose/nose${selectedNose}.png`), require(`../images/mouth/mouth${selectedMouth}.png`)])
                   .then((src) => setSrc(src))
                   .catch((err) => console.log(err));
 
             }else{
                 setSelectedHair(selectedHair - 1);
-                mergeImages([base, require(`../images/hair/hair${selectedHair-1}.png`), require('../images/eyes/eyes1.png')])
+                mergeImages([base, require(`../images/hair/hair${selectedHair}.png`), require(`../images/eyes/eyes${selectedEye}.png`), require(`../images/nose/nose${selectedNose}.png`), require(`../images/mouth/mouth${selectedMouth}.png`)])
                   .then((src) => setSrc(src))
                   .catch((err) => console.log(err));
             }
@@ -38,12 +38,16 @@ export default function Home() {
         case "increment":
             if(selectedHair == 3){
                 setSelectedHair(1);
-                mergeImages([base, require(`../images/hair/hair${selectedHair}.png`)])
+                mergeImages([base, require(`../images/hair/hair${selectedHair}.png`), require(`../images/eyes/eyes${selectedEye}.png`), require(`../images/nose/nose${selectedNose}.png`), require(`../images/mouth/mouth${selectedMouth}.png`)])
                   .then((src) => setSrc(src))
                   .catch((err) => console.log(err));
 
             }else{
                 setSelectedHair(selectedHair + 1);
+                mergeImages([base, require(`../images/hair/hair${selectedHair}.png`), require(`../images/eyes/eyes${selectedEye}.png`), require(`../images/nose/nose${selectedNose}.png`), require(`../images/mouth/mouth${selectedMouth}.png`)])
+                  .then((src) => setSrc(src))
+                  .catch((err) => console.log(err));
+
             }
         break;
     }
@@ -54,16 +58,32 @@ export default function Home() {
         case "decrement":
             if(selectedEye == 1){
                 setSelectedEye(3);
+                mergeImages([base, require(`../images/hair/hair${selectedHair}.png`), require(`../images/eyes/eyes${selectedEye}.png`), require(`../images/nose/nose${selectedNose}.png`), require(`../images/mouth/mouth${selectedMouth}.png`)])
+                  .then((src) => setSrc(src))
+                  .catch((err) => console.log(err));
+
             }else{
                 setSelectedEye(selectedEye - 1);
+                mergeImages([base, require(`../images/hair/hair${selectedHair}.png`), require(`../images/eyes/eyes${selectedEye}.png`), require(`../images/nose/nose${selectedNose}.png`), require(`../images/mouth/mouth${selectedMouth}.png`)])
+                  .then((src) => setSrc(src))
+                  .catch((err) => console.log(err));
+
             }
         break;
 
         case "increment":
             if(selectedEye == 3){
                 setSelectedEye(1);
+                mergeImages([base, require(`../images/hair/hair${selectedHair}.png`), require(`../images/eyes/eyes${selectedEye}.png`), require(`../images/nose/nose${selectedNose}.png`), require(`../images/mouth/mouth${selectedMouth}.png`)])
+                  .then((src) => setSrc(src))
+                  .catch((err) => console.log(err));
+
             }else{
                 setSelectedEye(selectedEye + 1);
+                mergeImages([base, require(`../images/hair/hair${selectedHair}.png`), require(`../images/eyes/eyes${selectedEye}.png`), require(`../images/nose/nose${selectedNose}.png`), require(`../images/mouth/mouth${selectedMouth}.png`)])
+                  .then((src) => setSrc(src))
+                  .catch((err) => console.log(err));
+
             }
         break;
     }
@@ -74,16 +94,32 @@ export default function Home() {
         case "decrement":
             if(selectedNose == 1){
                 setSelectedNose(2);
+                mergeImages([base, require(`../images/hair/hair${selectedHair}.png`), require(`../images/eyes/eyes${selectedEye}.png`), require(`../images/nose/nose${selectedNose}.png`), require(`../images/mouth/mouth${selectedMouth}.png`)])
+                  .then((src) => setSrc(src))
+                  .catch((err) => console.log(err));
+
             }else{
                 setSelectedNose(selectedNose - 1);
+                mergeImages([base, require(`../images/hair/hair${selectedHair}.png`), require(`../images/eyes/eyes${selectedEye}.png`), require(`../images/nose/nose${selectedNose}.png`), require(`../images/mouth/mouth${selectedMouth}.png`)])
+                  .then((src) => setSrc(src))
+                  .catch((err) => console.log(err));
+
             }
         break;
 
         case "increment":
             if(selectedNose == 2){
                 setSelectedNose(1);
+                mergeImages([base, require(`../images/hair/hair${selectedHair}.png`), require(`../images/eyes/eyes${selectedEye}.png`), require(`../images/nose/nose${selectedNose}.png`), require(`../images/mouth/mouth${selectedMouth}.png`)])
+                  .then((src) => setSrc(src))
+                  .catch((err) => console.log(err));
+
             }else{
                 setSelectedNose(selectedNose + 1);
+                mergeImages([base, require(`../images/hair/hair${selectedHair}.png`), require(`../images/eyes/eyes${selectedEye}.png`), require(`../images/nose/nose${selectedNose}.png`), require(`../images/mouth/mouth${selectedMouth}.png`)])
+                  .then((src) => setSrc(src))
+                  .catch((err) => console.log(err));
+
             }
         break;
     }
@@ -94,16 +130,32 @@ export default function Home() {
         case "decrement":
             if(selectedMouth == 1){
                 setSelectedMouth(3);
+                mergeImages([base, require(`../images/hair/hair${selectedHair}.png`), require(`../images/eyes/eyes${selectedEye}.png`), require(`../images/nose/nose${selectedNose}.png`), require(`../images/mouth/mouth${selectedMouth}.png`)])
+                  .then((src) => setSrc(src))
+                  .catch((err) => console.log(err));
+
             }else{
                 setSelectedMouth(selectedMouth - 1);
+                mergeImages([base, require(`../images/hair/hair${selectedHair}.png`), require(`../images/eyes/eyes${selectedEye}.png`), require(`../images/nose/nose${selectedNose}.png`), require(`../images/mouth/mouth${selectedMouth}.png`)])
+                  .then((src) => setSrc(src))
+                  .catch((err) => console.log(err));
+
             }
         break;
 
         case "increment":
             if(selectedMouth == 3){
                 setSelectedMouth(1);
+                mergeImages([base, require(`../images/hair/hair${selectedHair}.png`), require(`../images/eyes/eyes${selectedEye}.png`), require(`../images/nose/nose${selectedNose}.png`), require(`../images/mouth/mouth${selectedMouth}.png`)])
+                  .then((src) => setSrc(src))
+                  .catch((err) => console.log(err));
+
             }else{
                 setSelectedMouth(selectedMouth + 1);
+                mergeImages([base, require(`../images/hair/hair${selectedHair}.png`), require(`../images/eyes/eyes${selectedEye}.png`), require(`../images/nose/nose${selectedNose}.png`), require(`../images/mouth/mouth${selectedMouth}.png`)])
+                  .then((src) => setSrc(src))
+                  .catch((err) => console.log(err));
+
             }
         break;
     }
@@ -117,11 +169,6 @@ export default function Home() {
         <div className = "wrapper">
             <div className="image-container">
                 <img src={src} alt="emoji preview" />
-                {/* <img src={require(`../images/hair/hair${selectedHair}.png`)} alt="hair preview" />
-                <img src={require(`../images/eyes/eyes${selectedEye}.png`)} alt="eyes preview" />
-                <img src={require(`../images/nose/nose${selectedNose}.png`)} alt="nose preview" />
-                <img src={require(`../images/mouth/mouth${selectedMouth}.png`)} alt="mouth preview" /> */}
-
                 <form>
                     <input type="text" placeholder="Name"/>
                 </form>
