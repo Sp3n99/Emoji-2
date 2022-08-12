@@ -117,9 +117,6 @@ export default function Home() {
                 <img src={require(`../images/eyes/eyes${selectedEye}.png`)} alt="eyes preview" />
                 <img src={require(`../images/nose/nose${selectedNose}.png`)} alt="nose preview" />
                 <img src={require(`../images/mouth/mouth${selectedMouth}.png`)} alt="mouth preview" />
-                <form>
-                    <input type="text" placeholder="Name"/>
-                </form>
             </div>
             <div className="options-container">
                 <div className="options-wrapper">
