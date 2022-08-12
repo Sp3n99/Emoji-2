@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./home.scss"
 import Topbar from "../components/Topbar"
 import mergeImages from 'merge-images-v2'
+import base from "../images/base.png"
 
 export default function Home() {
   const [src, setSrc] = useState(null);
@@ -9,34 +10,38 @@ export default function Home() {
   const [selectedEye, setSelectedEye] = useState(1);
   const [selectedNose, setSelectedNose] = useState(1);
   const [selectedMouth, setSelectedMouth] = useState(1);
-
   useEffect(() => {
 
-    mergeImages([require("../images/base.png")])
+    mergeImages([base])
       .then((src) => setSrc(src))
       .catch((err) => console.log(err));
 
   }, []);
-
-  function merge(selection) {
-    mergeImages([require("../images/base.png"), require("" + selection)])
-      .then((src) => setSrc(src))
-      .catch((err) => console.log(err));
-  };
 
   const handleHairSelect = (direction) => {
     switch(direction){
         case "decrement":
             if(selectedHair == 1){
                 setSelectedHair(3);
+                var test = mergeImages([base, require(`../images/hair/hair${selectedHair}.png`), require('../images/eyes/eyes1.png')])
+                  .then((src) => setSrc(src))
+                  .catch((err) => console.log(err));
+
             }else{
                 setSelectedHair(selectedHair - 1);
+                mergeImages([base, require(`../images/hair/hair${selectedHair-1}.png`), require('../images/eyes/eyes1.png')])
+                  .then((src) => setSrc(src))
+                  .catch((err) => console.log(err));
             }
         break;
 
         case "increment":
             if(selectedHair == 3){
                 setSelectedHair(1);
+                mergeImages([base, require(`../images/hair/hair${selectedHair}.png`)])
+                  .then((src) => setSrc(src))
+                  .catch((err) => console.log(err));
+
             }else{
                 setSelectedHair(selectedHair + 1);
             }
@@ -51,7 +56,6 @@ export default function Home() {
                 setSelectedEye(3);
             }else{
                 setSelectedEye(selectedEye - 1);
-                merge(`../images/eyes/eyes${selectedEye}.png`);
             }
         break;
 
@@ -113,10 +117,11 @@ export default function Home() {
         <div className = "wrapper">
             <div className="image-container">
                 <img src={src} alt="emoji preview" />
-                <img src={require(`../images/hair/hair${selectedHair}.png`)} alt="hair preview" />
+                {/* <img src={require(`../images/hair/hair${selectedHair}.png`)} alt="hair preview" />
                 <img src={require(`../images/eyes/eyes${selectedEye}.png`)} alt="eyes preview" />
                 <img src={require(`../images/nose/nose${selectedNose}.png`)} alt="nose preview" />
-                <img src={require(`../images/mouth/mouth${selectedMouth}.png`)} alt="mouth preview" />
+                <img src={require(`../images/mouth/mouth${selectedMouth}.png`)} alt="mouth preview" /> */}
+
                 <form>
                     <input type="text" placeholder="Name"/>
                 </form>
