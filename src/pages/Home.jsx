@@ -1,15 +1,56 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useReducer, useState } from "react";
 import "./home.scss"
 import Topbar from "../components/Topbar"
 import mergeImages from 'merge-images-v2'
 import base from "../images/base.png"
 
+const ACTIONS = {
+    INCREMENT: 'increment',
+    DECREMENT: 'decrement'
+}
+
+const FEATURES = {
+    HEAD: 'head',
+    BODY: 'body',
+    HAIR: 'hair',
+    BRACELET: 'bracelet',
+    EYES: 'eyes',
+    BACKGROUND: 'background',
+    MOUTH: 'mouth',
+    NOSE: 'nose',
+    COLOR: 'color'
+}
+
+const INITIAL_FACE = {
+    head: 1,
+    body: 1,
+    hair: 1,
+    bracelet: 1,
+    eyes: 1,
+    background: 1,
+    mouth: 1,
+    nose: 1,
+    color: 1
+}
+
+const reducer = (state, action) => {
+        switch(action.type){
+            case ACTIONS.INCREMENT: 
+                return action.index + 1;
+            default: return state;
+        }
+};
+
 export default function Home() {
-  const [src, setSrc] = useState(null);
-  const [selectedHair, setSelectedHair] = useState(1);
-  const [selectedEye, setSelectedEye] = useState(1);
-  const [selectedNose, setSelectedNose] = useState(1);
-  const [selectedMouth, setSelectedMouth] = useState(1);
+    const [src, setSrc] = useState(null);
+    const [selectedHair, setSelectedHair] = useState(1);
+    const [selectedEye, setSelectedEye] = useState(1);
+    const [selectedNose, setSelectedNose] = useState(1);
+    const [selectedMouth, setSelectedMouth] = useState(1);
+
+    const[emojis, dispatch] = useReducer(reducer, {});
+
+
   useEffect(() => {
 
     mergeImages([base])
@@ -169,9 +210,6 @@ export default function Home() {
         <div className = "wrapper">
             <div className="image-container">
                 <img src={src} alt="emoji preview" />
-                <form>
-                    <input type="text" placeholder="Name"/>
-                </form>
             </div>
             <div className="options-container">
                 <div className="options-wrapper">
