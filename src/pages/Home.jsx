@@ -36,12 +36,14 @@ const ACTIONS = {
 
 async function RenderFinal(selections) {
     var images = []
+    selections = ["Body - 1 - Green", "Head - 1 - Green", "Eyes - 1", "Mouth - 1", "Nose - 1"]
     images.push(require(`../images/Bodies/${selections[0]}.png`))
     images.push(require(`../images/Heads/${selections[1]}.png`))
     images.push(require(`../images/Eyes/${selections[2]}.png`))
     images.push(require(`../images/Mouths/${selections[3]}.png`))
     images.push(require(`../images/Noses/${selections[4]}.png`))
     let download = await mergeImages(images)
+    console.log(download)
     return download
 }
 const reducer = (state, action) => {
