@@ -36,12 +36,11 @@ const ACTIONS = {
 
 async function RenderFinal(selections) {
     var images = []
-    selections = ["Body - 1 - Green", "Head - 1 - Green", "Eyes - 1", "Mouth - 1", "Nose - 1"]
-    images.push(require(`../images/Bodies/${selections[0]}.png`))
-    images.push(require(`../images/Heads/${selections[1]}.png`))
-    images.push(require(`../images/Eyes/${selections[2]}.png`))
-    images.push(require(`../images/Mouths/${selections[3]}.png`))
-    images.push(require(`../images/Noses/${selections[4]}.png`))
+    images.push(require(`../images/Bodies/Body${selections[0]}.png`))
+    images.push(require(`../images/Heads/Head${selections[1]}.png`))
+    images.push(require(`../images/Eyes/Eyes${selections[2]}.png`))
+    images.push(require(`../images/Mouths/Mouth${selections[3]}.png`))
+    images.push(require(`../images/Noses/Nose${selections[4]}.png`))
     let download = await mergeImages(images)
     console.log(download)
     return download
@@ -205,7 +204,7 @@ export default function Home() {
         <Topbar />
         <button onClick={() => {
                     console.log("clicked")
-                    RenderFinal([emojis.body, emojis.head, emojis.eyes, emojis.mouth, emojis.nose]);
+                    RenderFinal(['' + emojis.body + emojis.color, '' + emojis.head + emojis.color, emojis.eyes, emojis.mouth, emojis.nose]);
                 }}></button>
         <div className = "wrapper">
             <div className="image-container">
