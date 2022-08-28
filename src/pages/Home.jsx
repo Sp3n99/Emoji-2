@@ -2,7 +2,6 @@ import React, { useEffect, useReducer, useState } from "react";
 import "./home.scss"
 import Topbar from "../components/Topbar"
 import mergeImages from 'merge-images-v2'
-import base from "../images/base.png"
 
 const INITIAL_FACE = {
     head: 1,
@@ -35,10 +34,19 @@ const ACTIONS = {
     SETSRC: 'setSrc'
 }
 
-
+async function RenderFinal(selections) {
+    var images = []
+    images.push(require(`../images/Bodies/${selections[0]}.png`))
+    images.push(require(`../images/Heads/${selections[1]}.png`))
+    images.push(require(`../images/Eyes/${selections[2]}.png`))
+    images.push(require(`../images/Mouths/${selections[3]}.png`))
+    images.push(require(`../images/Noses/${selections[4]}.png`))
+    let download = await mergeImages(images)
+    return download
+}
 const reducer = (state, action) => {
     switch(action.type){
-            // INCREMENTING 
+            // INCREMENTING
             case ACTIONS.INCREMENT:
                 switch(action.feature){
                     case FEATURES.HEAD:
@@ -65,7 +73,7 @@ const reducer = (state, action) => {
                               .catch((err) => console.log(err));
                               return {...state, hair: state.hair + 1}
                         }
-                        
+
                     break;
                     case FEATURES.BRACELET:
                         return {...state, bracelet: state.bracelet + 1}
@@ -137,7 +145,7 @@ const reducer = (state, action) => {
             break;
 
             //DECREMENTING
-            case ACTIONS.DECREMENT: 
+            case ACTIONS.DECREMENT:
                 switch(action.feature){
                     case FEATURES.HEAD:
                         return {...state, head: state.head - 1}
@@ -233,11 +241,11 @@ const reducer = (state, action) => {
                 }
             break;
 
-            case ACTIONS.SETSRC: 
-                return{...state, src: action.payload}    
+            case ACTIONS.SETSRC:
+                return{...state, src: action.payload}
             break;
 
-            default: 
+            default:
     }
 }
 
