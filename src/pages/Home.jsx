@@ -107,7 +107,11 @@ const reducer = (state, action) => {
                     break;
 
                     case FEATURES.COLOR:
-                        return {...state, color: state.color + 1}
+                        if(state.color == 8){
+                            return {...state, color: 1}
+                      }else{
+                            return {...state, color: state.color + 1}
+                      }
                     break;
 
                 }
@@ -173,7 +177,11 @@ const reducer = (state, action) => {
                     break;
 
                     case FEATURES.COLOR:
-                        return {...state, color: state.color - 1}
+                        if(state.color == 1){
+                            return {...state, color: 8}
+                      }else{
+                            return {...state, color: state.color - 1}
+                      }
                     break;
                 }
             break;
@@ -281,12 +289,12 @@ export default function Home() {
                             </div>
                         </div>
                         <div className="emoji">
-                            <span>Body</span>
+                            <span>Color</span>
                             <div className="feature-wrapper">
-                                <button className="left-button" onClick={() => dispatch({type: ACTIONS.DECREMENT, feature: FEATURES.BODY})}>-</button>
+                                <button className="left-button" onClick={() => dispatch({type: ACTIONS.DECREMENT, feature: FEATURES.COLOR})}>-</button>
+                                <img className="base" src={require(`../images/Bodies/Body${emojis.body}${emojis.color}.png`)} />
                                 <img className="base" src={require(`../images/Heads/Head${emojis.head}${emojis.color}.png`)} />
-                                <img src={require(`../images/Bodies/Body${emojis.body}${emojis.color}.png`)} />
-                                <button className="right-button" onClick={() => dispatch({type: ACTIONS.INCREMENT, feature: FEATURES.BODY})}>+</button>
+                                <button className="right-button" onClick={() => dispatch({type: ACTIONS.INCREMENT, feature: FEATURES.COLOR})}>+</button>
                             </div>
                         </div>
                     </div>
