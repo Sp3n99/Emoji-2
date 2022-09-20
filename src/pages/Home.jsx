@@ -67,7 +67,7 @@ const reducer = (state, action) => {
                     break;
 
                     case FEATURES.HAIR:
-                        if(state.hair == 3){
+                        if(state.hair == 8){
                               return {...state, hair: 1}
                         }else{
                               return {...state, hair: state.hair + 1}
@@ -79,7 +79,7 @@ const reducer = (state, action) => {
                     break;
 
                     case FEATURES.EYES:
-                        if(state.eyes == 3){
+                        if(state.eyes == 8){
                               return {...state, eyes: 1}
                         }else{
                               return {...state, eyes: state.eyes + 1}
@@ -91,7 +91,7 @@ const reducer = (state, action) => {
                     break;
 
                     case FEATURES.MOUTH:
-                        if(state.mouth == 3){
+                        if(state.mouth == 8){
                               return {...state, mouth: 1}
                         }else{
                               return {...state, mouth: state.mouth + 1}
@@ -99,7 +99,7 @@ const reducer = (state, action) => {
                     break;
 
                     case FEATURES.NOSE:
-                        if(state.nose == 2){
+                        if(state.nose == 8){
                               return {...state, nose: 1}
                         }else{
                               return {...state, nose: state.nose + 1}
@@ -138,7 +138,7 @@ const reducer = (state, action) => {
 
                     case FEATURES.HAIR:
                         if(state.hair == 1){
-                              return {...state, hair: 3}
+                              return {...state, hair: 8}
                         }else{
                               return {...state, hair: state.hair - 1}
                         }
@@ -150,7 +150,7 @@ const reducer = (state, action) => {
 
                     case FEATURES.EYES:
                         if(state.eyes == 1){
-                              return {...state, eyes: 3}
+                              return {...state, eyes: 8}
                         }else{
                               return {...state, eyes: state.eyes - 1}
                         }
@@ -162,7 +162,7 @@ const reducer = (state, action) => {
 
                     case FEATURES.MOUTH:
                         if(state.mouth == 1){
-                              return {...state, mouth: 3}
+                              return {...state, mouth: 8}
                         }else{
                               return {...state, mouth: state.mouth - 1}
                         }
@@ -170,7 +170,7 @@ const reducer = (state, action) => {
 
                     case FEATURES.NOSE:
                         if(state.nose == 1){
-                              return {...state, nose: 2}
+                              return {...state, nose: 8}
                         }else{
                               return {...state, nose: state.nose - 1}
                         }
