@@ -36,11 +36,14 @@ const ACTIONS = {
 
 async function RenderFinal(selections) {
     var images = []
+    images.push(require(`../images/Background/Background${selections[0]}.png`))
     images.push(require(`../images/Bodies/Body${selections[0]}.png`))
     images.push(require(`../images/Heads/Head${selections[1]}.png`))
     images.push(require(`../images/Eyes/Eyes${selections[2]}.png`))
+    images.push(require(`../images/Hair/Hair${selections[2]}.png`))
     images.push(require(`../images/Mouths/Mouth${selections[3]}.png`))
     images.push(require(`../images/Noses/Nose${selections[4]}.png`))
+    images.push(require(`../images/Bracelet/Bracelet${selections[4]}.png`))
     let download = await mergeImages(images)
     console.log(download)
     return download
@@ -67,7 +70,7 @@ const reducer = (state, action) => {
                     break;
 
                     case FEATURES.HAIR:
-                        if(state.hair == 8){
+                        if(state.hair == 3){
                               return {...state, hair: 1}
                         }else{
                               return {...state, hair: state.hair + 1}
@@ -79,7 +82,7 @@ const reducer = (state, action) => {
                     break;
 
                     case FEATURES.EYES:
-                        if(state.eyes == 8){
+                        if(state.eyes == 3){
                               return {...state, eyes: 1}
                         }else{
                               return {...state, eyes: state.eyes + 1}
@@ -91,7 +94,7 @@ const reducer = (state, action) => {
                     break;
 
                     case FEATURES.MOUTH:
-                        if(state.mouth == 8){
+                        if(state.mouth == 3){
                               return {...state, mouth: 1}
                         }else{
                               return {...state, mouth: state.mouth + 1}
@@ -99,7 +102,7 @@ const reducer = (state, action) => {
                     break;
 
                     case FEATURES.NOSE:
-                        if(state.nose == 8){
+                        if(state.nose == 2){
                               return {...state, nose: 1}
                         }else{
                               return {...state, nose: state.nose + 1}
@@ -138,7 +141,7 @@ const reducer = (state, action) => {
 
                     case FEATURES.HAIR:
                         if(state.hair == 1){
-                              return {...state, hair: 8}
+                              return {...state, hair: 3}
                         }else{
                               return {...state, hair: state.hair - 1}
                         }
@@ -150,7 +153,7 @@ const reducer = (state, action) => {
 
                     case FEATURES.EYES:
                         if(state.eyes == 1){
-                              return {...state, eyes: 8}
+                              return {...state, eyes: 3}
                         }else{
                               return {...state, eyes: state.eyes - 1}
                         }
@@ -162,7 +165,7 @@ const reducer = (state, action) => {
 
                     case FEATURES.MOUTH:
                         if(state.mouth == 1){
-                              return {...state, mouth: 8}
+                              return {...state, mouth: 3}
                         }else{
                               return {...state, mouth: state.mouth - 1}
                         }
@@ -170,7 +173,7 @@ const reducer = (state, action) => {
 
                     case FEATURES.NOSE:
                         if(state.nose == 1){
-                              return {...state, nose: 8}
+                              return {...state, nose: 2}
                         }else{
                               return {...state, nose: state.nose - 1}
                         }
@@ -204,7 +207,7 @@ export default function Home() {
         <Topbar />
         <button onClick={() => {
                     console.log("clicked")
-                    RenderFinal(['' + emojis.body + emojis.color, '' + emojis.head + emojis.color, emojis.eyes, emojis.mouth, emojis.nose]);
+                    RenderFinal([emojis.background, '' + emojis.body + emojis.color, '' + emojis.head + emojis.color, emojis.eyes, emojis.hair, emojis.mouth, emojis.nose, emojis.bracelet]);
                 }}></button>
         <div className = "wrapper">
             <div className="image-container">
