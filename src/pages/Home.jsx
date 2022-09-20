@@ -207,8 +207,10 @@ export default function Home() {
         <Topbar />
         <button onClick={() => {
                     console.log("clicked")
-                    RenderFinal([emojis.background, '' + emojis.body + emojis.color, '' + emojis.head + emojis.color, emojis.eyes, emojis.hair, emojis.mouth, emojis.nose, emojis.bracelet]);
-                }}></button>
+                    var downloadpic = RenderFinal([emojis.background, '' + emojis.body + emojis.color, '' + emojis.head + emojis.color, emojis.eyes, emojis.hair, emojis.mouth, emojis.nose, emojis.bracelet]);
+                }}>
+                    <a href="/images/myw3schoolsimage.jpg" download></a>
+                </button>
         <div className = "wrapper">
             <div className="image-container">
                 <img src={require(`../images/Heads/Head${emojis.head}${emojis.color}.png`)} alt="emoji preview" />
@@ -249,10 +251,10 @@ export default function Home() {
                         <div className="emoji">
                             <span>Body</span>
                             <div className="feature-wrapper">
-                                <button className="left-button" onClick={() => dispatch({type: ACTIONS.DECREMENT, feature: FEATURES.BODY})}>-</button>
+                                <button className="left-button" onClick={{/*() => dispatch({type: ACTIONS.DECREMENT, feature: FEATURES.BODY})*/}}>-</button>
                                 <img className="base" src={require(`../images/Heads/Head${emojis.head}${emojis.color}.png`)} />
                                 <img src={require(`../images/Bodies/Body${emojis.body}${emojis.color}.png`)} />
-                                <button className="right-button" onClick={() => dispatch({type: ACTIONS.INCREMENT, feature: FEATURES.BODY})}>+</button>
+                                <button className="right-button" onClick={{/*() => dispatch({type: ACTIONS.INCREMENT, feature: FEATURES.BODY})*/}}>+</button>
                             </div>
                         </div>
                     </div>
