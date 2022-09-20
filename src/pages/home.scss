@@ -92,7 +92,7 @@
                                 height: 50%;
                                 font-size: 30px;
                                 border: none;
-
+                                z-index: 99;
                                 &:hover{
                                     background-color: #00000013;
                                 }
@@ -108,7 +108,7 @@
                                 height: 100%;
                                 position: absolute;
                                 .base{
-                                    z-index: 999;
+                                    z-index: 0;
                                 }
                             }
 
