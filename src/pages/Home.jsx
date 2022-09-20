@@ -37,13 +37,13 @@ const ACTIONS = {
 async function RenderFinal(selections) {
     var images = []
     images.push(require(`../images/Background/Background${selections[0]}.png`))
-    images.push(require(`../images/Bodies/Body${selections[0]}.png`))
-    images.push(require(`../images/Heads/Head${selections[1]}.png`))
-    images.push(require(`../images/Eyes/Eyes${selections[2]}.png`))
-    images.push(require(`../images/Hair/Hair${selections[2]}.png`))
-    images.push(require(`../images/Mouths/Mouth${selections[3]}.png`))
-    images.push(require(`../images/Noses/Nose${selections[4]}.png`))
-    images.push(require(`../images/Bracelet/Bracelet${selections[4]}.png`))
+    images.push(require(`../images/Bodies/Body${selections[1]}.png`))
+    images.push(require(`../images/Heads/Head${selections[2]}.png`))
+    images.push(require(`../images/Eyes/Eyes${selections[3]}.png`))
+    images.push(require(`../images/Hair/Hair${selections[4]}.png`))
+    images.push(require(`../images/Mouths/Mouth${selections[5]}.png`))
+    images.push(require(`../images/Noses/Nose${selections[6]}.png`))
+    images.push(require(`../images/Bracelet/Bracelet${selections[7]}.png`))
     let download = await mergeImages(images)
     console.log(download)
     return download
