@@ -220,9 +220,9 @@ export default function Home() {
                         <div className="emoji">
                             <span>Head</span>
                             <div className="feature-wrapper head">
-                                <button className="left-button" onClick={() => dispatch({type: ACTIONS.DECREMENT, feature: FEATURES.HEAD})}>-</button>
+                                <button className="left-button" onClick={{/*() => dispatch({type: ACTIONS.DECREMENT, feature: FEATURES.HEAD}) */}}>-</button>
                                 <img src={require(`../images/Heads/Head${emojis.head}${emojis.color}.png`)} />
-                                <button className="right-button" onClick={() => dispatch({type: ACTIONS.INCREMENT, feature: FEATURES.HEAD})}>+</button>
+                                <button className="right-button" onClick={{/*{() => dispatch({type: ACTIONS.INCREMENT, feature: FEATURES.HEAD}) */} }>+</button>
                             </div>
                         </div>
                         <div className="emoji">
@@ -257,20 +257,21 @@ export default function Home() {
                 <div className="options-wrapper">
                     <div className="emojis">
                         <div className="emoji">
-                            <span>Head</span>
+                            <span>Hair</span>
                             <div className="feature-wrapper head">
-                                <button className="left-button" onClick={() => dispatch({type: ACTIONS.DECREMENT, feature: FEATURES.HEAD})}>-</button>
-                                <img src={require(`../images/Heads/Head${emojis.head}${emojis.color}.png`)} />
-                                <button className="right-button" onClick={() => dispatch({type: ACTIONS.INCREMENT, feature: FEATURES.HEAD})}>+</button>
+                                <button className="left-button" onClick={() => dispatch({type: ACTIONS.DECREMENT, feature: FEATURES.HAIR})}>-</button>
+                                <img className="base" src={require(`../images/Heads/Head${emojis.head}${emojis.color}.png`)} />
+                                <img src={require(`../images/Hair/Hair${emojis.hair}.png`)} />
+                                <button className="right-button" onClick={() => dispatch({type: ACTIONS.INCREMENT, feature: FEATURES.HAIR})}>+</button>
                             </div>
                         </div>
                         <div className="emoji">
-                            <span>Eyes</span>
+                            <span>Bracelet</span>
                             <div className="feature-wrapper head">
-                                <button className="left-button" onClick={() => dispatch({type: ACTIONS.DECREMENT, feature: FEATURES.EYES})}>-</button>
+                                <button className="left-button" onClick={() => dispatch({type: ACTIONS.DECREMENT, feature: FEATURES.MOUTH})}>-</button>
                                 <img className="base" src={require(`../images/Heads/Head${emojis.head}${emojis.color}.png`)} />
-                                <img src={require(`../images/Eyes/Eyes${emojis.eyes}.png`)} />
-                                <button className="right-button" onClick={() => dispatch({type: ACTIONS.INCREMENT, feature: FEATURES.EYES})}>+</button>
+                                <img src={require(`../images/Mouths/Mouth${emojis.mouth}.png`)} />
+                                <button className="right-button" onClick={() => dispatch({type: ACTIONS.INCREMENT, feature: FEATURES.MOUTH})}>+</button>
                             </div>
                         </div>
                         <div className="emoji">
