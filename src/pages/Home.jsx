@@ -2,6 +2,8 @@ import React, { useEffect, useReducer, useState } from "react";
 import "./home.scss"
 import Topbar from "../components/Topbar"
 import mergeImages from 'merge-images-v2'
+import { saveAs } from 'file-saver'
+
 
 const INITIAL_FACE = {
     head: 1,
@@ -34,20 +36,8 @@ const ACTIONS = {
     SETSRC: 'setSrc'
 }
 
-async function RenderFinal(selections) {
-    var images = []
-    images.push(require(`../images/Background/Background${selections[0]}.png`))
-    images.push(require(`../images/Bodies/Body${selections[1]}.png`))
-    images.push(require(`../images/Heads/Head${selections[2]}.png`))
-    images.push(require(`../images/Eyes/Eyes${selections[3]}.png`))
-    images.push(require(`../images/Hair/Hair${selections[4]}.png`))
-    images.push(require(`../images/Mouths/Mouth${selections[5]}.png`))
-    images.push(require(`../images/Noses/Nose${selections[6]}.png`))
-    images.push(require(`../images/Bracelet/Bracelet${selections[7]}.png`))
-    let download = await mergeImages(images)
-    console.log(download)
-    return download
-}
+
+
 const reducer = (state, action) => {
     switch(action.type){
             // INCREMENTING
@@ -199,26 +189,63 @@ const reducer = (state, action) => {
 
 export default function Home() {
     const [src, setSrc] = useState(null);
-
+    const [finalSRC, setFinalSRC] = useState("");
     const [emojis, dispatch] = useReducer(reducer, INITIAL_FACE);
+    const [name, setName] = useState("character");
+
+    const downloadFunc = async () => {
+        let downloadPromise = new Promise(async (resolve, reject) => {
+            var images = []
+            images.push(require(`../images/Background/Background${emojis.background}.png`))
+            images.push(require(`../images/Bodies/Body${"" +emojis.body + emojis.color}.png`))
+            images.push(require(`../images/Heads/Head${"" + emojis.head + emojis.color}.png`))
+            images.push(require(`../images/Eyes/Eyes${emojis.eyes}.png`))
+            images.push(require(`../images/Hair/Hair${emojis.hair}.png`))
+            images.push(require(`../images/Mouths/Mouth${emojis.mouth}.png`))
+            images.push(require(`../images/Noses/Nose${emojis.nose}.png`))
+            images.push(require(`../images/Bracelet/Bracelet${emojis.bracelet}.png`))
+            let download = await mergeImages(images)
+            resolve(download)
+        });
+    
+        downloadPromise.then((res) => {
+            console.log("THEN MOMENT")
+            saveAs(res, name);
+        });
+    }
+
+    const handleName = (e) => {
+        e.preventDefault();
+        setName(e.target.value)
+        console.log(e.target.value)
+    }
 
   return (
     <div className="home">
         <Topbar />
-        <button onClick={() => {
-                    console.log("clicked")
-                    var downloadpic = RenderFinal([emojis.background, '' + emojis.body + emojis.color, '' + emojis.head + emojis.color, emojis.eyes, emojis.hair, emojis.mouth, emojis.nose, emojis.bracelet]);
-                }}>
-                    <a href="/images/myw3schoolsimage.jpg" download></a>
-                </button>
         <div className = "wrapper">
             <div className="image-container">
-                <img src={require(`../images/Heads/Head${emojis.head}${emojis.color}.png`)} alt="emoji preview" />
-                <img src={require(`../images/Eyes/Eyes${emojis.eyes}.png`)} alt="emoji preview" />
-                <img src={require(`../images/Noses/Nose${emojis.nose}.png`)} alt="emoji preview" />
-                <img src={require(`../images/Mouths/Mouth${emojis.mouth}.png`)} alt="emoji preview" />
-                <img src={require(`../images/Bodies/Body${emojis.body}${emojis.color}.png`)} alt="emoji preview" />
-            </div>
+                <div className="menu">
+                    <div className="options">
+                        <form>
+                            <input placeholder="Enter your name" onChange={(e) => handleName(e)}></input>
+                        </form>
+                        <div className="background">
+                            <button></button>
+                            <span>Background</span>
+                            <button></button>
+                        </div>
+                        <button className="download" onClick = {async() =>{downloadFunc()}}>Download</button>
+                    </div>
+                </div>
+                <div className="main">
+                    <img src={require(`../images/Heads/Head${emojis.head}${emojis.color}.png`)} alt="emoji preview" />
+                    <img src={require(`../images/Eyes/Eyes${emojis.eyes}.png`)} alt="emoji preview" />
+                    <img src={require(`../images/Noses/Nose${emojis.nose}.png`)} alt="emoji preview" />
+                    <img src={require(`../images/Mouths/Mouth${emojis.mouth}.png`)} alt="emoji preview" />
+                    <img src={require(`../images/Bodies/Body${emojis.body}${emojis.color}.png`)} alt="emoji preview" />
+                </div>
+           </div>
             <div className="options-container">
                 <div className="options-wrapper">
                     <div className="emojis">

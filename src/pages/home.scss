@@ -7,6 +7,9 @@
         height: 100px;
     }
 
+    a{
+        font-size: 60px;
+    }
     .wrapper{
 
         width: 70vw;
@@ -23,35 +26,78 @@
         .image-container{
             height: 100%;
             width: 45vw;
-            background-color: #0000000a;
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            flex-direction: row;
             position: relative;
-            img{
+            .menu{
+                width: 15vw;
                 height: 100%;
-                position: absolute;
-                align-self: center;
-            }
-
-            form{
-                width: 50%;
-                height: 5%;
                 display: flex;
                 justify-content: center;
-                position: absolute;
-                bottom: 50px;
-
-                input{
+                align-items: flex-end;
+                .options{
                     width: 100%;
-                    height: 100%;
-                    text-align: center;
-                    border: none;
-
-                    &:hover{
-                        background-color: rgba(128, 128, 128, 0.062);
+                    height: 15vh;
+                    border: 1px solid lightgray;
+                    display: flex;
+                    flex-direction: column;
+                    margin-bottom: 7vh;
+                    margin-left: 3vw;
+                    form{
+                        width: 100%;
+                        height: 5vh;
+                        padding: 0;
+                        margin: 0;
+                        input{
+                            height: 5vh;
+                            width: 100%;
+                            padding: 0;
+                            margin: 0;
+                            border: none;
+                            background-color: rgba(211, 211, 211, 0.2);
+                            padding-left: 10%;
+                            width: 90%;
+                        }
                     }
+
+                    .download{
+                        border: none;
+                        background-color: lightgray;
+                        height: 6vh;
+                        &:hover{
+                            background-color: lightblue;
+                        }
+                     
+                    }
+
+                    .background{
+                        height: 4vh;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        button{
+                        width: 20%;
+                        }
+
+                        span{
+                            padding: 0 5px;
+                        }
+                    }
+
+
                 }
+            }
+            .main{
+                position: relative;
+                img{
+                    width: 30vw;
+                    height: 100%;
+                    position: absolute;
+                    align-self: center;
+                    top: 0;
+                    left: -5vw;
+                }
+
             }
         }
 
