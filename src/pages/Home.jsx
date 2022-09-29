@@ -9,7 +9,7 @@ const INITIAL_FACE = {
     head: 1,
     body: 1,
     hair: 1,
-    bracelet: 1,
+    shirt: 1,
     eyes: 1,
     background: 1,
     mouth: 1,
@@ -22,7 +22,7 @@ const FEATURES = {
     HEAD: 'head',
     BODY: 'body',
     HAIR: 'hair',
-    BRACELET: 'bracelet',
+    SHIRT: 'shirt',
     EYES: 'eyes',
     BACKGROUND: 'background',
     MOUTH: 'mouth',
@@ -34,6 +34,7 @@ const ACTIONS = {
     INCREMENT: 'increment',
     DECREMENT: 'decrement',
     SETSRC: 'setSrc'
+
 }
 
 
@@ -67,8 +68,8 @@ const reducer = (state, action) => {
                         }
 
                     break;
-                    case FEATURES.BRACELET:
-                        return {...state, bracelet: state.bracelet + 1}
+                    case FEATURES.SHIRT:
+                        return {...state, shirt: state.shirt + 1}
                     break;
 
                     case FEATURES.EYES:
@@ -137,8 +138,8 @@ const reducer = (state, action) => {
                         }
                     break;
 
-                    case FEATURES.BRACELET:
-                        return {...state, bracelet: state.bracelet - 1}
+                    case FEATURES.SHIRT:
+                        return {...state, shirt: state.shirt - 1}
                     break;
 
                     case FEATURES.EYES:
@@ -203,11 +204,11 @@ export default function Home() {
             images.push(require(`../images/Hair/Hair${emojis.hair}.png`))
             images.push(require(`../images/Mouths/Mouth${emojis.mouth}.png`))
             images.push(require(`../images/Noses/Nose${emojis.nose}.png`))
-            images.push(require(`../images/Bracelet/Bracelet${emojis.bracelet}.png`))
+            images.push(require(`../images/Shirt/Shirt${emojis.shirt}.png`))
             let download = await mergeImages(images)
             resolve(download)
         });
-    
+
         downloadPromise.then((res) => {
             console.log("THEN MOMENT")
             saveAs(res, name);
@@ -239,11 +240,11 @@ export default function Home() {
                     </div>
                 </div>
                 <div className="main">
+                    <img src={require(`../images/Bodies/Body${emojis.body}${emojis.color}.png`)} alt="emoji preview" />
                     <img src={require(`../images/Heads/Head${emojis.head}${emojis.color}.png`)} alt="emoji preview" />
                     <img src={require(`../images/Eyes/Eyes${emojis.eyes}.png`)} alt="emoji preview" />
                     <img src={require(`../images/Noses/Nose${emojis.nose}.png`)} alt="emoji preview" />
                     <img src={require(`../images/Mouths/Mouth${emojis.mouth}.png`)} alt="emoji preview" />
-                    <img src={require(`../images/Bodies/Body${emojis.body}${emojis.color}.png`)} alt="emoji preview" />
                 </div>
            </div>
             <div className="options-container">
@@ -298,12 +299,12 @@ export default function Home() {
                             </div>
                         </div>
                         <div className="emoji">
-                            <span>Bracelet</span>
+                            <span>Shirt</span>
                             <div className="feature-wrapper head">
-                                <button className="left-button" onClick={() => dispatch({type: ACTIONS.DECREMENT, feature: FEATURES.MOUTH})}>-</button>
+                                <button className="left-button" onClick={() => dispatch({type: ACTIONS.DECREMENT, feature: FEATURES.SHIRT})}>-</button>
                                 <img className="base" src={require(`../images/Heads/Head${emojis.head}${emojis.color}.png`)} />
                                 <img src={require(`../images/Mouths/Mouth${emojis.mouth}.png`)} />
-                                <button className="right-button" onClick={() => dispatch({type: ACTIONS.INCREMENT, feature: FEATURES.MOUTH})}>+</button>
+                                <button className="right-button" onClick={() => dispatch({type: ACTIONS.INCREMENT, feature: FEATURES.SHIRT})}>+</button>
                             </div>
                         </div>
                         <div className="emoji">
