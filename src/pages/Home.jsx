@@ -86,7 +86,11 @@ const reducer = (state, action) => {
                     break;
 
                     case FEATURES.BACKGROUND:
-                        return {...state, background: state.background + 1}
+                        if(state.background == 8){
+                            return {...state, background: 1}
+                      }else{
+                            return {...state, background: state.background + 1}
+                      }
                     break;
 
                     case FEATURES.MOUTH:
@@ -160,7 +164,11 @@ const reducer = (state, action) => {
                     break;
 
                     case FEATURES.BACKGROUND:
-                        return {...state, background: state.background - 1}
+                        if(state.background == 1){
+                            return {...state, background: 8}
+                      }else{
+                            return {...state, background: state.background - 1}
+                      }
                     break;
 
                     case FEATURES.MOUTH:
@@ -210,7 +218,6 @@ export default function Home() {
             images.push(require(`../images/Bodies/Body${"" +emojis.body + emojis.color}.png`))
             images.push(require(`../images/Heads/Head${"" + emojis.head + emojis.color}.png`))
             images.push(require(`../images/Eyes/Eyes${emojis.eyes}.png`))
-            images.push(require(`../images/Hair/Hair${emojis.hair}.png`))
             images.push(require(`../images/Mouths/Mouth${emojis.mouth}.png`))
             images.push(require(`../images/Noses/Nose${emojis.nose}.png`))
             images.push(require(`../images/Shirts/Shirt${"" + emojis.body + emojis.shirt}.png`))
@@ -232,9 +239,8 @@ export default function Home() {
 
   return (
     <div className="home">
-        <Topbar />
         <div className = "wrapper">
-            <div className="image-container">
+            <div className="image-container" style={{backgroundImage: `url(${require(`../images/Background/Background${emojis.background}.png`)})`}}>
                 <div className="menu">
                     <div className="options">
                         <form>
@@ -244,6 +250,7 @@ export default function Home() {
                     </div>
                 </div>
                 <div className="main">
+                    
                     <img src={require(`../images/Bodies/Body${emojis.body}${emojis.color}.png`)} alt="emoji preview" />
                     <img src={require(`../images/Heads/Head${emojis.head}${emojis.color}.png`)} alt="emoji preview" />
                     <img src={require(`../images/Eyes/Eyes${emojis.eyes}.png`)} alt="emoji preview" />
@@ -323,12 +330,11 @@ export default function Home() {
                             </div>
                         </div>
                         <div className="emoji">
-                            <span>Color</span>
-                            <div className="feature-wrapper">
-                                <button className="left-button" onClick={() => dispatch({type: ACTIONS.DECREMENT, feature: FEATURES.COLOR})}>-</button>
-                                <img className="base" src={require(`../images/Bodies/Body${emojis.body}${emojis.color}.png`)} />
-                                <img className="base" src={require(`../images/Heads/Head${emojis.head}${emojis.color}.png`)} />
-                                <button className="right-button" onClick={() => dispatch({type: ACTIONS.INCREMENT, feature: FEATURES.COLOR})}>+</button>
+                            <span>Background</span>
+                            <div className="feature-wrapper background">
+                                <button className="left-button" onClick={() => dispatch({type: ACTIONS.DECREMENT, feature: FEATURES.BACKGROUND})}>-</button>
+                                <img className="base" src={require(`../images/Background/Background${emojis.background}.png`)} />
+                                <button className="right-button" onClick={() => dispatch({type: ACTIONS.INCREMENT, feature: FEATURES.BACKGROUND})}>+</button>
                             </div>
                         </div>
                     </div>

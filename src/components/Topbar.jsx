@@ -11,8 +11,8 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className="topbar">
-        <h1>Emoji Creator</h1>
+    <div className="topbar" style={{backgroundColor: '#505050', color: '#eeeeee'}}>
+        <h1>Stellar Emojis</h1>
     </div>
   )
 }
