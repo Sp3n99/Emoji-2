@@ -265,36 +265,36 @@ export default function Home() {
                         <div className="emoji">
                             <span>Head</span>
                             <div className="feature-wrapper head">
-                                <button className="left-button" onClick={() => dispatch({type: ACTIONS.DECREMENT, feature: FEATURES.HEAD}) }>-</button>
+                                <button className="left-button" style={{backgroundImage: `url(${require(`../images/Background/Background${emojis.background}.png`)})`}} onClick={() => dispatch({type: ACTIONS.DECREMENT, feature: FEATURES.HEAD}) }>-</button>
                                 <img src={require(`../images/Heads/Head${emojis.head}${emojis.color}.png`)} />
-                                <button className="right-button" onClick={() => dispatch({type: ACTIONS.INCREMENT, feature: FEATURES.HEAD})  }>+</button>
+                                <button className="right-button" style={{backgroundImage: `url(${require(`../images/Background/Background${emojis.background}.png`)})`}} onClick={() => dispatch({type: ACTIONS.INCREMENT, feature: FEATURES.HEAD})  }>+</button>
                             </div>
                         </div>
                         <div className="emoji">
                             <span>Eyes</span>
                             <div className="feature-wrapper head">
-                                <button className="left-button" onClick={() => dispatch({type: ACTIONS.DECREMENT, feature: FEATURES.EYES})}>-</button>
+                                <button className="left-button" style={{backgroundImage: `url(${require(`../images/Background/Background${emojis.background}.png`)})`}} onClick={() => dispatch({type: ACTIONS.DECREMENT, feature: FEATURES.EYES})}>-</button>
                                 <img className="base" src={require(`../images/Heads/Head${emojis.head}${emojis.color}.png`)} />
                                 <img src={require(`../images/Eyes/Eyes${emojis.eyes}.png`)} />
-                                <button className="right-button" onClick={() => dispatch({type: ACTIONS.INCREMENT, feature: FEATURES.EYES})}>+</button>
+                                <button className="right-button" style={{backgroundImage: `url(${require(`../images/Background/Background${emojis.background}.png`)})`}} onClick={() => dispatch({type: ACTIONS.INCREMENT, feature: FEATURES.EYES})}>+</button>
                             </div>
                         </div>
                         <div className="emoji">
                             <span>Nose</span>
                             <div className="feature-wrapper head">
-                                <button className="left-button" onClick={() => dispatch({type: ACTIONS.DECREMENT, feature: FEATURES.NOSE})}>-</button>
+                                <button className="left-button" style={{backgroundImage: `url(${require(`../images/Background/Background${emojis.background}.png`)})`}} onClick={() => dispatch({type: ACTIONS.DECREMENT, feature: FEATURES.NOSE})}>-</button>
                                 <img className="base" src={require(`../images/Heads/Head${emojis.head}${emojis.color}.png`)} />
                                 <img src={require(`../images/Noses/Nose${emojis.nose}.png`)} />
-                                <button className="right-button" onClick={() => dispatch({type: ACTIONS.INCREMENT, feature: FEATURES.NOSE})}>+</button>
+                                <button className="right-button" style={{backgroundImage: `url(${require(`../images/Background/Background${emojis.background}.png`)})`}} onClick={() => dispatch({type: ACTIONS.INCREMENT, feature: FEATURES.NOSE})}>+</button>
                             </div>
                         </div>
                         <div className="emoji">
                             <span>Mouth</span>
                             <div className="feature-wrapper head">
-                                <button className="left-button" onClick={() => dispatch({type: ACTIONS.DECREMENT, feature: FEATURES.MOUTH})}>-</button>
+                                <button className="left-button" style={{backgroundImage: `url(${require(`../images/Background/Background${emojis.background}.png`)})`}} onClick={() => dispatch({type: ACTIONS.DECREMENT, feature: FEATURES.MOUTH})}>-</button>
                                 <img className="base" src={require(`../images/Heads/Head${emojis.head}${emojis.color}.png`)} />
                                 <img src={require(`../images/Mouths/Mouth${emojis.mouth}.png`)} />
-                                <button className="right-button" onClick={() => dispatch({type: ACTIONS.INCREMENT, feature: FEATURES.MOUTH})}>+</button>
+                                <button className="right-button" style={{backgroundImage: `url(${require(`../images/Background/Background${emojis.background}.png`)})`}} onClick={() => dispatch({type: ACTIONS.INCREMENT, feature: FEATURES.MOUTH})}>+</button>
                             </div>
                         </div>
                     </div>
@@ -304,37 +304,37 @@ export default function Home() {
                         <div className="emoji">
                             <span>Shirt</span>
                             <div className="feature-wrapper">
-                                <button className="left-button" onClick={() => dispatch({type: ACTIONS.DECREMENT, feature: FEATURES.SHIRT})}>-</button>
+                                <button className="left-button" style={{backgroundImage: `url(${require(`../images/Background/Background${emojis.background}.png`)})`}} onClick={() => dispatch({type: ACTIONS.DECREMENT, feature: FEATURES.SHIRT})}>-</button>
                                 <img className="base" src={require(`../images/Heads/Head${emojis.head}${emojis.color}.png`)} />
                                 <img className="base" src={require(`../images/Bodies/Body${emojis.body}${emojis.color}.png`)} />
                                 <img src={require(`../images/Shirts/Shirt${emojis.body}${emojis.shirt}.png`)} />
-                                <button className="right-button" onClick={() => dispatch({type: ACTIONS.INCREMENT, feature: FEATURES.SHIRT})}>+</button>
+                                <button className="right-button" style={{backgroundImage: `url(${require(`../images/Background/Background${emojis.background}.png`)})`}} onClick={() => dispatch({type: ACTIONS.INCREMENT, feature: FEATURES.SHIRT})}>+</button>
                             </div>
                         </div>
                         <div className="emoji">
                             <span>Body</span>
                             <div className="feature-wrapper">
-                                <button className="left-button" onClick={() => dispatch({type: ACTIONS.DECREMENT, feature: FEATURES.BODY})}>-</button>
+                                <button className="left-button" style={{backgroundImage: `url(${require(`../images/Background/Background${emojis.background}.png`)})`}} onClick={() => dispatch({type: ACTIONS.DECREMENT, feature: FEATURES.BODY})}>-</button>
                                 <img className="base" src={require(`../images/Heads/Head${emojis.head}${emojis.color}.png`)} />
                                 <img src={require(`../images/Bodies/Body${emojis.body}${emojis.color}.png`)} />
-                                <button className="right-button" onClick={() => dispatch({type: ACTIONS.INCREMENT, feature: FEATURES.BODY})}>+</button>
+                                <button className="right-button" style={{backgroundImage: `url(${require(`../images/Background/Background${emojis.background}.png`)})`}} onClick={() => dispatch({type: ACTIONS.INCREMENT, feature: FEATURES.BODY})}>+</button>
                             </div>
                         </div>
                         <div className="emoji">
                             <span>Color</span>
                             <div className="feature-wrapper">
-                                <button className="left-button" onClick={() => dispatch({type: ACTIONS.DECREMENT, feature: FEATURES.COLOR})}>-</button>
+                                <button className="left-button" style={{backgroundImage: `url(${require(`../images/Background/Background${emojis.background}.png`)})`}} onClick={() => dispatch({type: ACTIONS.DECREMENT, feature: FEATURES.COLOR})}>-</button>
                                 <img className="base" src={require(`../images/Bodies/Body${emojis.body}${emojis.color}.png`)} />
                                 <img className="base" src={require(`../images/Heads/Head${emojis.head}${emojis.color}.png`)} />
-                                <button className="right-button" onClick={() => dispatch({type: ACTIONS.INCREMENT, feature: FEATURES.COLOR})}>+</button>
+                                <button className="right-button" style={{backgroundImage: `url(${require(`../images/Background/Background${emojis.background}.png`)})`}} onClick={() => dispatch({type: ACTIONS.INCREMENT, feature: FEATURES.COLOR})}>+</button>
                             </div>
                         </div>
                         <div className="emoji">
                             <span>Background</span>
                             <div className="feature-wrapper background">
-                                <button className="left-button" onClick={() => dispatch({type: ACTIONS.DECREMENT, feature: FEATURES.BACKGROUND})}>-</button>
+                                <button className="left-button" style={{backgroundImage: `url(${require(`../images/Background/Background${emojis.background}.png`)})`}} onClick={() => dispatch({type: ACTIONS.DECREMENT, feature: FEATURES.BACKGROUND})}>-</button>
                                 <img className="base" src={require(`../images/Background/Background${emojis.background}.png`)} />
-                                <button className="right-button" onClick={() => dispatch({type: ACTIONS.INCREMENT, feature: FEATURES.BACKGROUND})}>+</button>
+                                <button className="right-button" style={{backgroundImage: `url(${require(`../images/Background/Background${emojis.background}.png`)})`}} onClick={() => dispatch({type: ACTIONS.INCREMENT, feature: FEATURES.BACKGROUND})}>+</button>
                             </div>
                         </div>
                     </div>
