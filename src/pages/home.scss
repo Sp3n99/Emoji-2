@@ -41,6 +41,7 @@
                     flex-direction: column;
                     margin-bottom: 7vh;
                     margin-left: 3vw;
+                    box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.3);
                     form{
                         width: 100%;
                         height: 5vh;
@@ -59,7 +60,7 @@
 
                     .download{
                         border: none;
-                        background-color: lightgray;
+                        background-color: rgb(231, 231, 231);
                         height: 6vh;
                         &:hover{
                             background-color: lightblue;
@@ -121,12 +122,17 @@
                             
                             button{
                                 width: 20%;
-                                height: 50%;
+                                height: 29.5%;
                                 font-size: 30px;
                                 border: none;
                                 z-index: 99;
+                                border-radius: 100%;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                filter: grayscale(25%);
                                 &:hover{
-                                    background-color: #00000013;
+                                   filter: saturate(0%);
                                 }
                             }
                             .left-button{
@@ -161,8 +167,8 @@
 
                         .feature-wrapper.background{
                             img{
-                                width: 40%;
-                                height: 70%;
+                                width: 35%;
+                                height: 60%;
                                 padding-left: 0px;
                             }
                         }
