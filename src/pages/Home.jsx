@@ -69,7 +69,7 @@ const reducer = (state, action) => {
 
                     break;
                     case FEATURES.SHIRT:
-                        if(state.shirt == 2){
+                        if(state.shirt == 5){
                               return {...state, shirt: 1}
                         }else{
                             return {...state, shirt: state.shirt + 1}
@@ -250,7 +250,7 @@ export default function Home() {
                     </div>
                 </div>
                 <div className="main">
-                    
+
                     <img src={require(`../images/Bodies/Body${emojis.body}${emojis.color}.png`)} alt="emoji preview" />
                     <img src={require(`../images/Heads/Head${emojis.head}${emojis.color}.png`)} alt="emoji preview" />
                     <img src={require(`../images/Eyes/Eyes${emojis.eyes}.png`)} alt="emoji preview" />
