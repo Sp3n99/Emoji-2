@@ -141,7 +141,7 @@ const reducer = (state, action) => {
 
                     case FEATURES.HAIR:
                         if(state.hair == 1){
-                              return {...state, hair: 3}
+                              return {...state, hair: 8}
                         }else{
                               return {...state, hair: state.hair - 1}
                         }
@@ -149,7 +149,7 @@ const reducer = (state, action) => {
 
                     case FEATURES.SHIRT:
                         if(state.shirt == 1){
-                            return {...state, shirt: 2}
+                            return {...state, shirt: 5}
                       }else{
                             return {...state, shirt: state.shirt - 1}
                       }
@@ -157,7 +157,7 @@ const reducer = (state, action) => {
 
                     case FEATURES.EYES:
                         if(state.eyes == 1){
-                              return {...state, eyes: 3}
+                              return {...state, eyes: 6}
                         }else{
                               return {...state, eyes: state.eyes - 1}
                         }
@@ -173,7 +173,7 @@ const reducer = (state, action) => {
 
                     case FEATURES.MOUTH:
                         if(state.mouth == 1){
-                              return {...state, mouth: 3}
+                              return {...state, mouth: 8}
                         }else{
                               return {...state, mouth: state.mouth - 1}
                         }
@@ -181,7 +181,7 @@ const reducer = (state, action) => {
 
                     case FEATURES.NOSE:
                         if(state.nose == 1){
-                              return {...state, nose: 2}
+                              return {...state, nose: 5}
                         }else{
                               return {...state, nose: state.nose - 1}
                         }
@@ -226,8 +226,7 @@ export default function Home() {
         });
 
         downloadPromise.then((res) => {
-            console.log("THEN MOMENT")
-            saveAs(res, name);
+            saveAs(res, name + "'s emoji");
         });
     }
 
